@@ -6,9 +6,13 @@
     <%= image_tag("pokemon/#{pokemon.ndex}.png", alt: "pokemon") %>
   <% end %>
             <p>
-              <%= pokemon.name %>
+              Name: <%= pokemon.name %>
             </p>
             <p>
-              <%= pokemon.level %>
+              Level: <%= pokemon.level %>
             </p>
+            <p>
+              Health:<%= pokemon.health %>
+            </p>
+            <%= button_to "Damage!", damage_path(id: pokemon), :class => "button medium", :method => :patch %>
           <% end %>

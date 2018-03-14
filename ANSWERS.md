@@ -8,7 +8,7 @@
 # Question 3: What would you name your own Pokemon?
 	Miguel cause that man got the voice of an angel
 # Question 4: What did you pass into the redirect_to? If it is a path, what did that path need? If it is not a path, why is it okay not to have a path here?
-
+	I passed in trainer_path, which needed the trainer's id so it knew which trainer's page to display!
 # Question 5: Explain how putting this line "flash[:error] = @pokemon.errors.full_messages.to_sentence" shows error messages on your form.
 
 # Give us feedback on the project and decal below!
