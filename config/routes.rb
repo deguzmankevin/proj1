@@ -6,5 +6,4 @@ Rails.application.routes.draw do
   get '/new', to: 'pokemons#show'
   post '/trainers/:id', to: 'pokemons#new'
   resources :trainers
-
 end
