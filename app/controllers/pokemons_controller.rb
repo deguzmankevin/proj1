@@ -10,24 +10,14 @@ class PokemonsController < ApplicationController
 	def damage
 		@pokemon = Pokemon.find(params[:id])
 		@pokemon.health -= 10 
-		if @pokemon.health <= 0
-			@pokemon.destroy
-			#hide instead of destroy
-		else 
-			@pokemon.save
-		end
+		@pokemon.save
 		redirect_to trainer_path(@pokemon.trainer.id)
 	end
 
 	def heal
 		@pokemon = Pokemon.find(params[:id])
 		@pokemon.health += 10 
-		if @pokemon.health <= 0
-			#should still be hidden if no life after heal
-		else 
-			#show pokemon again
-			@pokemon.save
-		end
+		@pokemon.save
 		redirect_to trainer_path(@pokemon.trainer.id)
 	end
 	def new
