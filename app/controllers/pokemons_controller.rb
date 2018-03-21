@@ -9,6 +9,7 @@ class PokemonsController < ApplicationController
 
 	def damage
 		@pokemon = Pokemon.find(params[:id])
+		#need to target other pokemon and decrement its' health
 		@pokemon.health -= 10 
 		@pokemon.save
 		redirect_to trainer_path(@pokemon.trainer.id)

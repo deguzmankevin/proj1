@@ -1,0 +1,10 @@
+
+<div class="dropdown">
+  <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+  <div id="myDropdown" class="dropdown-content">
+  	<%= @pokemons.each do |pokemon| %>
+    	<%= button_to "#{pokemon.name}", damage_path(id: pokemon), :class => "button medium", :method => :patch %>
+    <% end %>
+  </div>
+</div>
+

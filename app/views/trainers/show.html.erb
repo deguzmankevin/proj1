@@ -1,3 +1,6 @@
+
+<%= stylesheet_link_tag "dropdown" %>
+<%= javascript_include_tag "dropdown" %>
 <h3>Trainer</h3>
 <p>Name: <%= @trainer.name if @trainer.name %></p>
 <p>Email: <%= @trainer.email if @trainer.email %></p>
@@ -12,13 +15,30 @@
     <p> Name: <%= pokemon.name %> </p>
     <p> Level: <%= pokemon.level %> </p>
     <p> Health:<%= pokemon.health %> </p>
-    <%= button_to "Damage!", damage_path(id: pokemon), :class => "button medium", :method => :patch %>
+    <div class="dropdown">
+  <button onclick="myFunction()" class="dropbtn">Damage!</button>
+  <div id="myDropdown" class="dropdown-content">
+    <%= @trainer.pokemons.each do |pokemon| %>
+        <%= button_to "#{pokemon.name}", damage_path(id: pokemon), :class => "button medium", :method => :patch %>
+        <% end %>
+  </div>
+</div>
+    
     <%= button_to "Heal!", heal_path(id: pokemon), :class => "button medium", :method => :patch %>
 <% elsif pokemon.ndex and pokemon.health > 0 %>
     <%= image_tag("pokemon/#{pokemon.ndex}.png", alt: "pokemon") %>
     <p> Name: <%= pokemon.name %> </p>
     <p> Level: <%= pokemon.level %> </p>
     <p> Health:<%= pokemon.health %> </p>
-    <%= button_to "Damage!", damage_path(id: pokemon), :class => "button medium", :method => :patch %>
+     <div class="dropdown">
+  <button onclick="myFunction()" class="dropbtn">Damage!</button>
+  <div id="myDropdown" class="dropdown-content">
+    <%= @trainer.pokemons.each do |pokemon| %>
+            <% if pokemon.ndex and pokemon.health > 0 %>
+        <%= button_to "#{pokemon.name}", damage_path(id: pokemon), :class => "button medium", :method => :patch %>
+            <% end %>
+        <% end %>
+  </div>
+</div>
 <% end %>
 <% end %>
