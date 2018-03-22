@@ -21,7 +21,8 @@ class PokemonsController < ApplicationController
 		@pokemon.save
 		redirect_to trainer_path(@pokemon.trainer.id)
 	end
-	def new
+
+	def create
 		@pokemon = Pokemon.create(new_params)#what happens to pokemon.new in show?
 		@pokemon.trainer = current_trainer
 		@pokemon.level = 1
@@ -32,12 +33,16 @@ class PokemonsController < ApplicationController
 			flash[:error] = @pokemon.errors.full_messages.to_sentence
 		end
 	end
+
+	def new
+		@pokemon = Pokemon.new
+	end
 	
 
-	def show 
-		@pokemon = Pokemon.new  #why do I need this? what does it have to do with @pokemon in simpleformfor
-		render :new
-	end
+	# def show 
+	# 	@pokemon = Pokemon.new  #why do I need this? what does it have to do with @pokemon in simpleformfor
+	# 	render :new
+	# end
 
 
 	private
