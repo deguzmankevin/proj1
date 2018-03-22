@@ -11,6 +11,7 @@
 # Question 5: Explain how putting this line "flash[:error] = @pokemon.errors.full_messages.to_sentence" shows error messages on your form.
 	application.html.erb renders messages.html.erb, which handles the flash message. 
 # Give us feedback on the project and decal below!
-	Fun project! Not too difficult and time consuming if you do a little each day. I thought #5 had a lot more to do than the other questions, so maybe split in into two parts?  Oh maybe also a part to name your trainer unless I did something wrong lol 
+	Fun project! Not too difficult and time consuming if you do a little each day. I thought #5 had a lot more to do than the other questions, so maybe split in into two parts?  Oh maybe also a part to name your trainer unless I did something wrong lol :)
 # Extra credit: Link your Heroku deployed app
 https://agile-refuge-23342.herokuapp.com/
+https://github.com/deguzmankevin/proj1
