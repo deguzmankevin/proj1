@@ -17,7 +17,7 @@
     <p> Level: <%= pokemon.level %> </p>
     <p> Health:<%= pokemon.health %> </p>
     <div class="dropdown">
-  <button onclick="myFunction()" class="dropbtn">Damage!</button>
+  <button onclick="myFunction(this)" class="dropbtn">Damage!</button>
   <div id="myDropdown" class="dropdown-content">
     <% @trainer.pokemons.each do |pokemon| %>
         <%= button_to "#{pokemon.name}", damage_path(id: pokemon), :class => "button small", :method => :patch %>
@@ -33,7 +33,7 @@
     <p> Level: <%= pokemon.level %> </p>
     <p> Health:<%= pokemon.health %> </p>
      <div class="dropdown">
-  <button onclick="myFunction()" class="dropbtn">Damage!</button>
+  <button onclick="myFunction(this)" class="dropbtn">Damage!</button>
   <div id="myDropdown" class="dropdown-content">
     <% @trainer.pokemons.each do |pokemon| %>
             <% if pokemon.ndex and pokemon.health > 0 %>
